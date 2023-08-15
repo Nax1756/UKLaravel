@@ -1,0 +1,23 @@
+@mixin breakpoint($point){
+    @if $point == elg{
+        @media(max-width:1200px){@content;}
+    }@else if $point == lg{
+        @media(max-width:992px){@content;}
+    }
+    @else if $point == md{
+        @media(max-width:768px){@content;}
+    }
+    @else if $point == sm{
+        @media(max-width:576px){@content;}
+    }@else if $point == xs{
+        @media(max-width:480px){@content;}
+    }@else if $point == xss{
+        @media(max-width:340px){@content;}
+    }
+}
+
+[class *="__container"] {
+    width: 90%;
+    padding: 0px 15px;
+    margin: 0 auto;
+}

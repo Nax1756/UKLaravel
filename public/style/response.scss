@@ -1,0 +1,30 @@
+@import "../style/mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300;400&display=swap');
+$color: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+.main{
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 40px;
+        .block{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%;
+            height: 150px;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin-left: 20px;
+            cursor: pointer;
+            .image{
+                width: 50%;
+            }
+            .title{
+                color: white;
+            }
+        }
+
+    }
+}

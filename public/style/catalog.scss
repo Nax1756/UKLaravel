@@ -1,0 +1,352 @@
+@import "../style/mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300;400&display=swap');
+$color: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+html {
+    overflow-x: hidden
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    animation: merge 3s forwards;
+    overflow-x: hidden;
+}
+select{
+    outline: none;
+}
+
+.content{
+    margin-top: 100px;
+    .container{
+        width: 95%;
+        padding: 0px 15px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+       
+        @include breakpoint(sm){
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px 0px;
+        }
+        .left-side{
+            @include breakpoint(lg){
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0px 20px;
+            }
+            @include breakpoint(md){
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .product-count{
+                color: rgba(255, 255, 255, 0.49);
+            }
+            .filter{
+                @include breakpoint(lg){
+                    display: none;
+                }
+                .title{
+                    font-weight: 500;
+                    font-size: 25px;
+                    line-height: 30px;
+                    color: #FFFFFF;
+                }
+                .set-price{
+                    .title{
+                        font-weight: 500;
+                        font-size: 17px;
+                        line-height: 21px;
+                        color: #FFFFFF;
+                    }
+                    .filter__price{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 0px 20px;
+                        .min-price__wrapper{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 107px;
+                            height: 30px;
+                            background: #FFF9F9;
+                            border: 1px solid #9B9B9B;
+                            border-radius: 9px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            .price-min{
+                                outline: none;
+                                width: 80%;
+                                color: #303030;
+                                border: none;
+                                font-size: 15px;
+                            }
+                            .currency{
+                                font-size: 15px;
+                                color: #747474;
+                                
+                            } 
+                        }
+                        .max-price__wrapper{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 107px;
+                            height: 30px;
+                            background: #FFF9F9;
+                            border: 1px solid #9B9B9B;
+                            border-radius: 9px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            .price-max{
+                                outline: none;
+                                width: 80%;
+                                color: #303030;
+                                border: none;
+                                font-size: 15px;
+                            }
+                            .currency{
+                                font-size: 15px;
+                                color: #747474;
+                            }
+                        }
+                        .price-submit{
+                            width: 50px;
+                            height: 20px;
+                            background: #FFFFFF;
+                            border: 1px solid #9B9B9B;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                   
+
+
+                   
+                }
+                .set-mark{
+                    .title{
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: #FFFFFF;
+                    }
+                    .mark-item{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                       .input-wrapper{
+                        input[type="checkbox"] {
+                            display: none;
+                        }
+                        
+                        input[type="checkbox"] + label {
+                            position: relative;
+                            cursor: pointer;
+                            padding-left: 25px; 
+                        }
+                        
+                        input[type="checkbox"] + label::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 20px; 
+                            height: 20px; 
+                            border: 2px solid orange;
+                            background-color: transparent; 
+                            border-radius: 5px;
+                        }
+                        
+                        input[type="checkbox"]:active + label::before {
+                            background-color: orange; 
+                        }
+                        
+                        input[type="checkbox"]:checked + label::before {
+                            background-color: orange; 
+                            content: "\2713"; 
+                            text-align: center;
+                            line-height: 20px; 
+                            font-size: 18px; 
+                            color: white; 
+                        }
+                       }
+                      
+                        .mark-name{
+                            font-size: 18px;
+                            margin-left: 20px;
+                        }
+                    }
+
+                }
+                .set-manufacturer{
+                    .title{
+                        font-size: 20px;
+                    }
+                    .manufacturer-item{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        .input-wrapper{
+                            input[type="checkbox"] {
+                                display: none;
+                            }
+                            
+                            input[type="checkbox"] + label {
+                                position: relative;
+                                cursor: pointer;
+                                padding-left: 25px; 
+                            }
+                            
+                            input[type="checkbox"] + label::before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 20px; 
+                                height: 20px; 
+                                border: 2px solid orange;
+                                background-color: transparent; 
+                                border-radius: 5px;
+                            }
+                            
+                            input[type="checkbox"]:active + label::before {
+                                background-color: orange; 
+                            }
+                            
+                            input[type="checkbox"]:checked + label::before {
+                                background-color: orange; 
+                                content: "\2713"; 
+                                text-align: center;
+                                line-height: 20px; 
+                                font-size: 18px; 
+                                color: white; 
+                            }
+                        }
+                        .manufacturer-name{
+                            font-size: 18px;
+                            margin-left: 20px;
+                        }
+                           
+                    }
+                }
+               
+
+               
+            }
+            .filter-open{
+                width: 130px;
+                height: 40px;
+                border-radius: 8px;
+                display: none;
+                flex-direction: row;
+                align-items: center;
+                background-color: #FF6B00;
+                @include breakpoint(lg){
+                    display: flex;
+                }
+                .filter-open__icon{
+                    fill: white;
+                    width: 20px;
+                    margin-left: 10px;
+                }
+                .title{
+                    color: white;
+                    font-size: 15px;
+                    margin-left: 10px;
+                }
+            }
+            
+        }
+        
+        .main-block{
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            margin-left: 100px;
+            .main-block__top{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                .sorting{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0 40px;
+                    @include breakpoint(xss){
+                        gap: 0 15px;
+                    }
+                    .product-mod{
+                        display: flex;
+                        gap: 0px 10px;
+                    }
+                    .select-sorting{
+                        padding: 10px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            .main-side__main{
+                width: 100%;
+                margin-top: 50px;
+                .catalog__square-mod{
+                    width: 100%;
+                    display: none;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 20px 20px;
+                    .catalog__product-item{
+                        width: 30%;
+                    
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        border:2px solid white;
+                        border-radius: 5px;
+                        gap: 40px 0px;
+                        .catalog__product-image{
+                            width: 50%;
+                            margin-top: 10px;
+                          
+                        }
+                        .catalog__product-text{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            margin-left: 40px;
+                            
+                            .catalog__product-title{
+                                margin: 0px;
+
+                            }
+                            .catalog__product-articul{
+                                margin: 0px;
+                                color: #707070;
+                                font-size: 10px;
+                            
+                            }
+                            .catalog__product-price{
+                                
+                            }
+                        }
+                       
+                    }
+                }
+                
+              
+            }
+            
+           
+        }
+
+    }
+   
+}
